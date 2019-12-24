@@ -14,14 +14,14 @@ defined( 'ABSPATH' ) || exit;
 define( 'CCWOOADDONSCOMPAT_VERSION', '9999.0' ); // DO NOT change the version in the plugin header or the Earth will fall on you :P 
 
 define( 'CCWOOADDONSCOMPAT__FILE__', __FILE__ );
-define( 'CCWOOADDONSCOMPAT_PATH', plugin_dir_path( WOOADDONSCOMPAT__FILE__ ) );
+define( 'CCWOOADDONSCOMPAT_PATH', plugin_dir_path( CCWOOADDONSCOMPAT__FILE__ ) );
 
 if( !defined( 'CCWOOADDONSCOMPAT_PLUGIN_BASE' ) ) {
-	define( 'CCWOOADDONSCOMPAT_PLUGIN_BASE', plugin_basename( WOOADDONSCOMPAT__FILE__ ) );
+	define( 'CCWOOADDONSCOMPAT_PLUGIN_BASE', plugin_basename( CCWOOADDONSCOMPAT__FILE__ ) );
 }
 
 function ccwooaddonscompat_hide_view_details( $plugin_meta, $plugin_file, $plugin_data, $status ) {
-	if( WOOADDONSCOMPAT_PLUGIN_BASE == $plugin_file ) {
+	if( CCWOOADDONSCOMPAT_PLUGIN_BASE == $plugin_file ) {
 		unset( $plugin_meta[2] );		
 	}
 	return $plugin_meta;
