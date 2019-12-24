@@ -4,14 +4,14 @@ Plugin Name: CC Compatibility for Woo Addons
 Description: A compatibility plugin for some WooCommerce addons to work with ClassicCommerce.
 Author: ZigPress
 Version: 9999.0
-Requires at least: 4.9
-Tested up to: 5.3
+Requires at least: 1.0.0
+Tested up to: 1.1.2
 Author URI: https://www.zigpress.com/
 */
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'CCWOOADDONSCOMPAT_VERSION', '10.0.1111' ); // DO NOT change the version in the plugin header or the Earth will fall on you :P 
+define( 'CCWOOADDONSCOMPAT_VERSION', '9999.0' ); // DO NOT change the version in the plugin header or the Earth will fall on you :P 
 
 define( 'CCWOOADDONSCOMPAT__FILE__', __FILE__ );
 define( 'CCWOOADDONSCOMPAT_PATH', plugin_dir_path( WOOADDONSCOMPAT__FILE__ ) );
