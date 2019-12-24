@@ -1,10 +1,29 @@
 <?php
 /*
-Plugin Name: WooCommerce Placeholder
-Description: Makes WooCommerce extensions think WooCommerce is present and active.
+Plugin Name: CC Compatibility for Woo Addons
+Description: A compatibility plugin for some WooCommerce addons to work with ClassicCommerce.
 Author: ZigPress
 Version: 9999.0
 Requires at least: 4.9
 Tested up to: 5.3
 Author URI: https://www.zigpress.com/
 */
+
+defined( 'ABSPATH' ) || exit;
+
+define( 'CCWOOADDONSCOMPAT_VERSION', '10.0.1111' ); // DO NOT change the version in the plugin header or the Earth will fall on you :P 
+
+define( 'CCWOOADDONSCOMPAT__FILE__', __FILE__ );
+define( 'CCWOOADDONSCOMPAT_PATH', plugin_dir_path( WOOADDONSCOMPAT__FILE__ ) );
+
+if( !defined( 'CCWOOADDONSCOMPAT_PLUGIN_BASE' ) ) {
+	define( 'CCWOOADDONSCOMPAT_PLUGIN_BASE', plugin_basename( WOOADDONSCOMPAT__FILE__ ) );
+}
+
+function ccwooaddonscompat_hide_view_details( $plugin_meta, $plugin_file, $plugin_data, $status ) {
+	if( WOOADDONSCOMPAT_PLUGIN_BASE == $plugin_file ) {
+		unset( $plugin_meta[2] );		
+	}
+	return $plugin_meta;
+}
+add_filter( 'plugin_row_meta', 'ccwooaddonscompat_hide_view_details', 10, 4 );
