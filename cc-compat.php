@@ -15,6 +15,10 @@ $dir = "woocommerce";
 $file_to_copy = 'woocommerce.txt';
 $cc_compat_woo_folder = dirname( __FILE__ );
 
+if( ! function_exists( 'wp_get_current_user' ) ) {
+    require( ABSPATH . "wp-includes/pluggable.php") ; 
+}
+  
 // if user can install plugins, then create access.
 if ( current_user_can( 'install_plugins' ) ) {
     
@@ -33,17 +37,13 @@ if ( current_user_can( 'install_plugins' ) ) {
     require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
     // activate it
-    activate_plugins( array( 'woocommerce/woocommerce.php' ) );
+    activate_plugins( 'woocommerce/woocommerce.php' );
     
     // deactivate cc-compat-woo
-    deactivate_plugins( array( 'cc-compat-woo/cc-compat-woo.php' ) );
+    deactivate_plugins( 'cc-compat-woo/cc-compat-woo.php' );
 
     // delete cc-compat-woo
     unlink('cc-compat-woo/cc-compat-woo.php');
 
     rmdir( $cc_compat_woo_folder );
 }
-
-
-
-
