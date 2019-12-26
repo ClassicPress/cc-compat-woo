@@ -25,7 +25,8 @@ global $wp_filesystem;
 // if user can install plugins, then create access.
 if ( current_user_can( 'install_plugins' ) ) {
 
-    // Make a folder called woocommerce
+    // Delete the cc-compat-woo plugin on activation of this.
+    // This fails the activation of the plugin is WooCommerce is installed already too.
     if( $wp_filesystem->is_dir( WP_PLUGIN_DIR . 'woocommerce' ) ) {
         // deactivate cc-compat-woo
         deactivate_plugins( 'cc-compat-woo/cc-compat-woo.php' );

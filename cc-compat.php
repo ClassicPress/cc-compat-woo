@@ -35,13 +35,5 @@ if ( current_user_can( 'install_plugins' ) ) {
         
         // activate it
         activate_plugins( 'woocommerce/woocommerce.php' );
-        
-        // deactivate cc-compat-woo
-        deactivate_plugins( 'cc-compat-woo/cc-compat-woo.php' );
-
-        // delete cc-compat-woo
-        $wp_filesystem->delete('cc-compat-woo/cc-compat-woo.php');
-
-        $wp_filesystem->rmdir( $cc_compat_woo_folder );
     }
 }
