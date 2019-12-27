@@ -26,12 +26,10 @@ if( !defined( 'CCWOOADDONSCOMPAT_PLUGIN_BASE' ) ) {
 }
 
 if( ! function_exists( 'wp_get_current_user' ) ) {
-    require( ABSPATH . "wp-includes/pluggable.php") ; 
+    require( ABSPATH . 'wp-includes/pluggable.php' ) ; 
 }
 
-$link = WP_PLUGIN_DIR . "/cc-compat-woo/inc/functions.php";
-
-require_once( $link ) ; 
+require_once( WP_PLUGIN_DIR . '/cc-compat-woo/includes/functions.php' ) ; 
 
 if ( is_woocommerce_installed() ) {
 	display_wc_message();
