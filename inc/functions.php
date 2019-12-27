@@ -16,19 +16,6 @@ function get_filesystem() {
 	return $wp_filesystem;
 }
 
-// Install plugin
-function install_compat() {
-	if ( current_user_can( 'install_plugins' ) ) {
-		// Require because it is not always loaded.
-		require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-        if ( is_woocommerce_installed() ) {
-            return;
-        }
-		// activate it
-		activate_plugins( 'woocommerce/woocommerce.php' );
-	}
-}
-
 // Display admin notice
 function display_wc_message() {
 	add_action( 'admin_notices', 'cc_wc_already_installed_notice' );
@@ -54,11 +41,23 @@ function is_woocommerce_installed() {
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
 	}
 	// Check for conclusive proof that the real WC is installed and not the Classic Commerce compatibility plugin 
-	if( $wp_filesystem->exists( WP_PLUGIN_DIR . "/woocommerce/woocommerce.php" ) && 
-		$wp_filesystem->exists( WP_PLUGIN_DIR . "/woocommerce/includes/class-woocommerce.php" ) && 
-		$wp_filesystem->exists( WP_PLUGIN_DIR . "/woocommerce/includes/admin/class-wc-admin.php" ) 
+	if( $wp_filesystem->exists( WP_PLUGIN_DIR . "/woocommerce/woocommerce.php" ) && $wp_filesystem->exists( WP_PLUGIN_DIR . "/woocommerce/includes/class-woocommerce.php" ) && $wp_filesystem->exists( WP_PLUGIN_DIR . "/woocommerce/includes/admin/class-wc-admin.php" ) 
 	) {
 		return true;
 	}
 	return false;
+}
+
+// Install plugin
+function install_compat() {
+	if ( current_user_can( 'install_plugins' ) ) {
+		// Require because it is not always loaded.
+		require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+		if ( false === is_woocommerce_installed() ) {
+			// activate it
+			activate_plugins( 'woocommerce/woocommerce.php' );
+		}
+
+	}
 }

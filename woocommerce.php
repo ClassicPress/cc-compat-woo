@@ -29,15 +29,16 @@ if( ! function_exists( 'wp_get_current_user' ) ) {
     require( ABSPATH . "wp-includes/pluggable.php") ; 
 }
 
-if( ! file_exists( CCWOOADDONSCOMPAT_PLUGIN_BASE . "inc/functions.php" ) ) {
-    require( CCWOOADDONSCOMPAT_PLUGIN_BASE . "inc/functions.php") ; 
-}
+$link = WP_PLUGIN_DIR . "/cc-compat-woo/inc/functions.php";
+
+require_once( $link ) ; 
 
 if ( is_woocommerce_installed() ) {
 	display_wc_message();
-} else {
-	install_compat();
+	return;
 }
+
+install_compat();
 
 add_filter( 'plugin_row_meta', 'ccwooaddonscompat_hide_view_details', 10, 4 );
 function ccwooaddonscompat_hide_view_details( $plugin_meta, $plugin_file, $plugin_data, $status ) {
