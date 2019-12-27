@@ -11,6 +11,9 @@ Author URI: https://www.zigpress.com/
 
 defined( 'ABSPATH' ) || exit;
 
+// Load the Update Client to manage updates for the CC Compatibility for Woo Addons plugin
+include_once dirname( __FILE__ ) . '/includes/UpdateClient.class.php';
+
 define( 'CCWOOADDONSCOMPAT_VERSION', '9999.0' ); // DO NOT change the version in the plugin header or the Earth will fall on you :P 
 
 define( 'CCWOOADDONSCOMPAT__FILE__', __FILE__ );
