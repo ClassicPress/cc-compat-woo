@@ -1,13 +1,15 @@
 <?php
-/*
-Plugin Name: CC Compatibility for Woo Addons
-Description: A compatibility plugin for some WooCommerce addons to work with ClassicCommerce.
-Author: ZigPress
-Version: 9999.0
-Requires at least: 1.0.0
-Tested up to: 1.1.2
-Author URI: https://www.zigpress.com/
-*/
+/**
+ * Plugin Name: CC Compatibility for Woo Addons
+ * Description: A compatibility plugin for some WooCommerce addons to work with Classic Commerce.
+ * Author: Classic Commerce Research Team
+ * Version: 9999.0
+ * Requires at least: 1.0.0
+ * Tested up to: 1.1.2
+ * Author URI: https://www.classiccommerce.cc/
+ * 
+ * Contributors: SAThemba, ZigPress
+ */
 
 defined( 'ABSPATH' ) || exit;
 
