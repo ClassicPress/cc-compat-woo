@@ -1,5 +1,5 @@
 {
-    "name": "ClassicPress-plugins/cc-compat-woo",
+    "name": "classicpress-plugins/cc-compat-woo",
     "description": "Plugin to facilitate Classic Commerce compatibility with WooCommerce Addons",
     "homepage": "https://github.com/ClassicPress-plugins/cc-compat-woo",
     "type": "wordpress-plugin",
