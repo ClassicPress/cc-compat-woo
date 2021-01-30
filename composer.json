@@ -1,0 +1,12 @@
+{
+    "name": "classicpress-plugins/cc-compat-woo",
+    "description": "Plugin to facilitate Classic Commerce compatibility with WooCommerce Addons",
+    "homepage": "https://github.com/ClassicPress-plugins/cc-compat-woo",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "require": {
+        "composer/installers": "~1.2"
+    }
+}
