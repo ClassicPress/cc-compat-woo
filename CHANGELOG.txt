@@ -1,4 +1,7 @@
 == Changelog ==
+= 9999.2 - 2024-10-15
+Removed: UpdateClient
+Added: proper headers
 
 = 9999.1 - 2020-12-14
 Updated: Code Potent Update Manager (fixes duplicate http request when checking for plugin updates)

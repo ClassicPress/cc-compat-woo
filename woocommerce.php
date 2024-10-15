@@ -3,9 +3,9 @@
  * Plugin Name: CC Compatibility for Woo Addons
  * Description: A compatibility plugin for some WooCommerce addons to work with Classic Commerce.
  * Author: Classic Commerce Research Team
- * Version: 9999.1
- * Requires at least: 1.0.0
- * Tested up to: 1.2.0
+ * Version: 9999.2
+ * Requires CP: 1.0
+ * Requires PHP: 7.0
  * Author URI: https://www.classiccommerce.cc/
  *
  * Contributors: SAThemba, ZigPress
@@ -13,10 +13,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-// Load the Update Client to manage updates for the CC Compatibility for Woo Addons plugin
-include_once dirname( __FILE__ ) . '/includes/UpdateClient.class.php';
-
-define( 'CCWOOADDONSCOMPAT_VERSION', '9999.1' );  // Make sure the version number (and in the headers) is higher then current Woo version
+define( 'CCWOOADDONSCOMPAT_VERSION', '9999.2' );  // Make sure the version number (and in the headers) is higher then current Woo version
 
 define( 'CCWOOADDONSCOMPAT__FILE__', __FILE__ );
 define( 'CCWOOADDONSCOMPAT_PATH', plugin_dir_path( CCWOOADDONSCOMPAT__FILE__ ) );
